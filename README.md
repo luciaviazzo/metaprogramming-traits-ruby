@@ -14,8 +14,8 @@ Además de la implementación básica, el proyecto incluye operaciones para comb
 
 - Definición de Traits
 - Uso de Traits en clases
-- Composición de Traits
 - Métodos requeridos (`requires`)
+- Composición de Traits
 - Detección de conflictos
 - Exclusión de métodos
 - Alias de métodos
@@ -116,33 +116,25 @@ Ciudadano.new.saludo
 
 ### Estrategias personalizadas de resolución de conflictos
 
+Además de las estrategias provistas por la herramienta, es posible definir estrategias personalizadas para determinar cómo resolver conflictos entre métodos con el mismo nombre.
+
 ```ruby
-un_trait = Trait.new_from_block do
-  def m1 = 10
-end
-
-otro_trait = Trait.new_from_block do
-  def m1 = 20
-end
-
 mi_estrategia = Estrategia.new_from_block do |metodos_conflictivos|
-  proc do |*args|
-    metodos_conflictivos.last.bind(self).call(*args)
-  end
+  # Lógica definida por el usuario para combinar,
+  # seleccionar o ejecutar los métodos en conflicto.
 end
 
-una_clase = Class.new
-
-una_clase.uses(
+un_trait_compuesto =
   (un_trait + otro_trait)
     .resolver_conflicto(:m1, mi_estrategia)
-)
-
-una_clase.new.m1
-# => 20
 ```
 
-Las estrategias pueden definirse dinámicamente para decidir cómo resolver conflictos entre métodos con el mismo nombre al componer Traits.
+Las estrategias reciben acceso a los métodos conflictivos y pueden implementar cualquier política de resolución, como:
+
+- Seleccionar uno de los métodos.
+- Ejecutar todos los métodos.
+- Combinar sus resultados mediante una reducción.
+- Definir criterios completamente personalizados.
 
 ## Conceptos aplicados
 
