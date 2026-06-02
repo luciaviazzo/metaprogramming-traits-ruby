@@ -1,0 +1,22 @@
+name: Ruby
+
+on: [ push, pull_request ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Configurar Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: .ruby-version
+        bundler-cache: true
+
+    - name: Pruebas
+      run: bundle exec rspec
+
+    - name: Linter
+      run: bundle exec rubocop --fail-level C

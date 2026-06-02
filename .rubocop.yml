@@ -1,0 +1,149 @@
+AllCops:
+  TargetRubyVersion: 3.4
+  DisabledByDefault: true
+  SuggestExtensions: false
+
+# Preferir unless en lugar de if !condicion
+Style/NegatedIf:
+  Enabled: true
+  Severity: refactor
+
+# Los nombres de los métodos que retornan booleanos deben terminar en ?
+Naming/PredicateMethod:
+  Enabled: true
+  Severity: convention
+
+# No usar return redundante en la última expresión de un método
+Style/RedundantReturn:
+  Enabled: true
+  Severity: convention
+
+# No usar paréntesis en definiciones de métodos sin parámetros
+Style/DefWithParentheses:
+  Enabled: true
+  Severity: convention
+
+# No usar paréntesis en envíos de mensaje sin argumentos: m1 en lugar de m1()
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+  Severity: convention
+
+# Preferir [] en lugar de Array.new, {} en lugar de Hash.new
+Style/EmptyLiteral:
+  Enabled: true
+  Severity: convention
+
+# Preferir siempre comillas dobles para strings
+Style/StringLiterals:
+  Enabled: true
+  Severity: refactor
+  EnforcedStyle: double_quotes
+
+# Los nombres de los métodos deben usar snake_case
+Naming/MethodName:
+  Enabled: true
+
+# Las variables (locales, de instancia, parámetros) deben usar snake_case
+Naming/VariableName:
+  Enabled: true
+
+# Las clases y módulos deben usar PascalCase
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+
+# Indentación de 2 espacios
+Layout/IndentationWidth:
+  Enabled: true
+  Severity: convention
+
+# Indentación consistente dentro de métodos y bloques
+Layout/IndentationConsistency:
+  Enabled: true
+
+# No dejar espacios en blanco al final de una línea
+Layout/TrailingWhitespace:
+  Enabled: true
+  Severity: info
+
+# El archivo debe terminar con exactamente una línea vacía
+Layout/TrailingEmptyLines:
+  Enabled: true
+  Severity: info
+
+# Espacio después de coma: m1(a, b) en lugar de m1(a,b)
+Layout/SpaceAfterComma:
+  Enabled: true
+  Severity: convention
+
+# Espacio alrededor de operadores: x + 1 en lugar de x+1
+Layout/SpaceAroundOperators:
+  Enabled: true
+  Severity: convention
+
+# Usar asignación abreviada (e.g. x += 1 en lugar de x = x + 1)
+Style/SelfAssignment:
+  Enabled: true
+  Severity: refactor
+
+# Detectar variables asignadas pero nunca usadas
+Lint/UselessAssignment:
+  Enabled: true
+  Severity: refactor
+
+# Detectar métodos definidos más de una vez en la misma clase
+Lint/DuplicateMethods:
+  Enabled: true
+  Severity: refactor
+
+# Espacios dentro de llaves en bloques: { |x| x } en lugar de {|x|x}
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+  Severity: convention
+
+# Espacios dentro de llaves en hashes literales: { a: 1 } en lugar de {a: 1}
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  Severity: info
+
+# Línea vacía entre definiciones de métodos
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+  Severity: convention
+
+# Alinear end con su keyword de apertura
+Layout/EndAlignment:
+  Enabled: true
+  Severity: convention
+
+# Preferir sintaxis moderna de hashes: { key: val } en lugar de { :key => val }
+Style/HashSyntax:
+  Enabled: true
+
+# Detectar usos de debugger/binding.pry que hayan quedado olvidados
+Lint/Debugger:
+  Enabled: true
+
+# No usar paréntesis en condiciones: if x en lugar de if (x)
+Style/ParenthesesAroundCondition:
+  Enabled: true
+  Severity: convention
+
+# Preferir .nil? en lugar de == nil
+Style/NilComparison:
+  Enabled: true
+  Severity: refactor
+
+# No dejar espacios dentro de paréntesis: m1(x) en lugar de m1( x )
+Layout/SpaceInsideParens:
+  Enabled: true
+  Severity: convention
+
+# No dejar líneas vacías consecutivas
+Layout/EmptyLines:
+  Enabled: true
+  Severity: info
+
+# Espacio antes de llave de apertura en bloques: m1 { } en lugar de m1{ }
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+  Severity: convention
