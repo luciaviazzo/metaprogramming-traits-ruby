@@ -6,9 +6,9 @@ Implementación de un sistema de Traits en Ruby desarrollada para la materia Pro
 
 Este proyecto implementa un mecanismo de composición de comportamiento basado en Traits utilizando técnicas de metaprogramación en Ruby.
 
-Los Traits permiten reutilizar comportamiento entre clases de una forma más flexible que la herencia tradicional, promoviendo una composición explícita y controlada.
+Los Traits permiten reutilizar comportamiento entre clases de una forma más flexible que la herencia tradicional.
 
-Además de la implementación básica, el proyecto incluye operaciones para combinar Traits, resolver conflictos entre métodos, definir requerimientos, crear estrategias de resolución configurables y realizar introspección sobre los Traits definidos.
+Además de la implementación básica, el proyecto incluye operaciones para combinar Traits, resolver conflictos entre métodos, definir requerimientos, crear estrategias de resolución configurables y realizar reflexión sobre los Traits definidos.
 
 ## Funcionalidades
 
